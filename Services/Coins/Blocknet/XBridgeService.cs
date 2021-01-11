@@ -20,17 +20,17 @@ namespace Blocknet.Lib.Services.Coins.Blocknet
             rpcPassword, walletPassword, rpcRequestTimeoutInSeconds)
         { }
 
-        public List<string> xrGetLocalTokens()
+        public List<string> dxGetNetworkTokens()
         {
-            return _rpcConnector.MakeRequest<List<string>>(RpcMethods.dxGetLocalTokens);
+            return _rpcConnector.MakeRequest<List<string>>(RpcMethods.dxGetNetworkTokens);
         }
 
-        public List<GetTradingDataResponse> xrGetTradingData(int blocks, bool errors = false)
+        public List<GetTradingDataResponse> dxGetTradingData(int blocks, bool errors = false)
         {
             return _rpcConnector.MakeRequest<List<GetTradingDataResponse>>(RpcMethods.dxGetTradingData, blocks, errors);
         }
 
-        public List<GetOrdersResponse> xrGetOrders()
+        public List<GetOrdersResponse> dxGetOrders()
         {
             return _rpcConnector.MakeRequest<List<GetOrdersResponse>>(RpcMethods.dxGetOrders);
         }

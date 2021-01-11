@@ -5,9 +5,9 @@ namespace Blocknet.Lib.Services.Coins.Blocknet
 {
     public interface IXBridgeService
     {
-        List<string> xrGetLocalTokens();
+        List<string> dxGetNetworkTokens();
 
-        List<GetTradingDataResponse> xrGetTradingData(int blocks, bool errors);
-        List<GetOrdersResponse> xrGetOrders();
+        List<GetTradingDataResponse> dxGetTradingData(int blocks, bool errors);
+        List<GetOrdersResponse> dxGetOrders();
     }
 }
