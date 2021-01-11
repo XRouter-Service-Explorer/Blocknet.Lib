@@ -17,10 +17,14 @@
 
   <PropertyGroup>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <Version>1.0.1</Version>
+    <AssemblyVersion>1.0.1.1</AssemblyVersion>
+    <FileVersion>1.0.1.1</FileVersion>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="licenses\LICENSE.txt" Pack="true" PackagePath="LICENSE.txt"/>
+    <None Include="licenses\LICENSE.txt" Pack="true" PackagePath="LICENSE.txt" />
   </ItemGroup>
 
 </Project>

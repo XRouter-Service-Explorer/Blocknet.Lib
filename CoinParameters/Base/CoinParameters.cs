@@ -1,12 +1,13 @@
 ﻿// Copyright (c) 2014 - 2016 George Kimionis
 // See the accompanying file LICENSE for the Software License Aggrement
 
-using System;
-using System.Configuration;
-using System.Diagnostics;
 using Blocknet.Lib.Auxiliary;
 using Blocknet.Lib.Services.Coins.Base;
 using Blocknet.Lib.Services.Coins.Blocknet;
+using Blocknet.Lib.Services.Coins.Cryptocoin;
+using System;
+using System.Configuration;
+using System.Diagnostics;
 
 namespace Blocknet.Lib.Services
 {
@@ -60,7 +61,7 @@ namespace Blocknet.Lib.Services
                     Console.WriteLine("[WARNING] The wallet password is either null or empty");
                     Console.ResetColor();
                 }
-								
+
 
                 #region Blocknet
                 else if (coinService is BlocknetService)
@@ -96,6 +97,19 @@ namespace Blocknet.Lib.Services
                     // BaseUnitsPerCoin = 100000000;
                     // CoinsPerBaseUnit = 0.00000001M;
                 }
+                #endregion
+
+                #region Agnostic coin (cryptocoin)
+
+                else if (coinService is CryptocoinService)
+                {
+                    CoinShortName = "XXX";
+                    CoinLongName = "Generic Cryptocoin Template";
+                    IsoCurrencyCode = "XXX";
+
+                    //  Note: The rest of the parameters will have to be defined at run-time
+                }
+
                 #endregion
 
                 #region Uknown coin exception
@@ -136,7 +150,7 @@ namespace Blocknet.Lib.Services
             public string DaemonUrl { private get; set; }
             public string DaemonUrlTestnet { private get; set; }
             public double EstimatedBlockGenerationTimeInMinutes { get; set; }
-            public int ExpectedNumberOfBlocksGeneratedPerDay => (int) EstimatedBlockGenerationTimeInMinutes * GlobalConstants.MinutesInADay;
+            public int ExpectedNumberOfBlocksGeneratedPerDay => (int)EstimatedBlockGenerationTimeInMinutes * GlobalConstants.MinutesInADay;
             public decimal FeePerThousandBytesInCoins { get; set; }
             public short FreeTransactionMaximumSizeInBytes { get; set; }
             public decimal FreeTransactionMinimumOutputAmountInCoins { get; set; }
