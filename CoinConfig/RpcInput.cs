@@ -1,4 +1,5 @@
-namespace Blocknet.Lib.CoinConfig{
+namespace Blocknet.Lib.CoinConfig
+{
     public class RpcInput
     {
         public string DaemonUrl { get; set; }
@@ -7,6 +8,8 @@ namespace Blocknet.Lib.CoinConfig{
         public string RpcUserName { get; set; }
         public string RpcPassword { get; set; }
         public short RpcRequestTimeoutInSeconds { get; set; }
+        public string CoinLongName { get; set; }
+        public string CoinShortName { get; set; }
     }
 }
 

@@ -1,18 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Newtonsoft.Json;
 
 namespace Blocknet.Lib.Services.Coins.Blocknet.XBridge
 {
-    public class GetTradingData
+    public class GetTradingDataResponse
     {
         public long Timestamp { get; set; }
-        public string Fee_txid { get; set; }
+        [JsonProperty("fee_txid")]
+        public string FeeTxId { get; set; }
         public string NodePubKey { get; set; }
         public string Id { get; set; }
         public string Taker { get; set; }
-        public decimal Taker_size { get; set; }
+        [JsonProperty("taker_size")]
+        public decimal TakerSize { get; set; }
         public string Maker { get; set; }
-        public decimal Maker_size { get; set; }
+        [JsonProperty("maker_size")]
+        public decimal MakerSize { get; set; }
     }
 }
